@@ -1,13 +1,13 @@
 <template>
   <router-view v-slot="slotProps">
-    <Layout>
+    <AppWrapper>
       <component :is="slotProps.Component"/>
-    </Layout>
+    </AppWrapper>
   </router-view>
 </template>
 
 <script setup lang="ts">
-import Layout from "@/components/layout/AppWrapper.vue";
+import AppWrapper from "@/components/layout/AppWrapper.vue";
 </script>
 
 <style>

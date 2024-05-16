@@ -1,4 +1,5 @@
 import {createRouter, createWebHistory} from "vue-router";
+import useLoadingStore from "@/store/modules/loading";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -40,6 +41,17 @@ const router = createRouter({
             meta: {title: '_not-found'}
         },
     ],
+});
+
+router.beforeEach((_, _2, next) => {
+    const loadingStore = useLoadingStore();
+    loadingStore.setLoading(true);
+    next();
+});
+
+router.afterEach(() => {
+    const loadingStore = useLoadingStore();
+    loadingStore.setLoading(false);
 });
 
 export default router;
