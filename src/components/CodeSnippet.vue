@@ -26,7 +26,7 @@
           ref="textRef"
           style="line-height: 25px"
           :class="withComments ? 'md:!pl-[6rem]' : 'md:!pl-[3rem]' "
-          class="w-full pr-1"
+          class="w-full pr-1 !py-0"
       >
         <br v-if="withComments">
         <slot/>
