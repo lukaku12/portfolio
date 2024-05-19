@@ -21,15 +21,16 @@
 
     <div class="w-full h-full inline">
 
-      <div
+      <v-container
+          fluid
           ref="textRef"
           style="line-height: 25px"
-          :class="withComments ? 'md:pl-[6rem]' : 'md:pl-[3rem]' "
+          :class="withComments ? 'md:!pl-[6rem]' : 'md:!pl-[3rem]' "
           class="w-full pr-1"
       >
         <br v-if="withComments">
         <slot/>
-      </div>
+      </v-container>
     </div>
 
   </div>
@@ -48,12 +49,12 @@ const {withComments} = defineProps({
 
 const textLines = ref(0);
 
-const textRef = ref<HTMLElement | null>(null);
+const textRef = ref<{$el: HTMLElement} | null>(null);
 
 function countLines() {
   if (!textRef.value) return;
 
-  const el = textRef.value;
+  const el = textRef.value.$el;
   const divHeight = el.offsetHeight;
   const lineHeight = parseInt(window.getComputedStyle(el).lineHeight);
   const lines = divHeight / lineHeight;
