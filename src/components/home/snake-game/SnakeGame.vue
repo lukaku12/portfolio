@@ -2,7 +2,7 @@
   <div class="flex flex-col items-center justify-center h-full">
 
     <section
-        class="from-[#175553] to-[#33BBB7] bg-gradient-to-br px-[30px] py-[35px] rounded-[8px] shadow-xl flex relative outline outline-[#010C15] border-t-[1px] border-t-secondary-blue">
+        class="from-[#175553] to-[#33BBB7] bg-gradient-to-br px-[30px] py-[35px] rounded-[8px] shadow-xl flex relative outline outline-2 outline-[#010C15] border-t-[1px] border-t-secondary-blue">
 
       <div :class="`min-w-[${canvasWidth}px]`" class="bg-[#011627] relative rounded-[8px] shadow-inner">
         <canvas
